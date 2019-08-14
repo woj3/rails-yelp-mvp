@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="pt-5"> <%= @restaurant.name %> </h1>
+  <h2 class="pt-5">Details</h2>
+  Address: <%= @restaurant.address %>
+  <br>
+  Category: <%= @restaurant.category %>
+  <br>
+  <h2 class="pt-5">Reviews</h2>
+  <ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li> <%= review.rating %>/5, <%= review.content %> </li>
+  <% end %>
+  </ul>
+
+  <%= link_to "Create a review", new_restaurant_review_path(@restaurant), class: "btn btn-primary mr-3" %>
+  <%= link_to "Go back to all Restaurants", restaurants_path, class: "btn btn-primary my-3"  %>
+</div>
